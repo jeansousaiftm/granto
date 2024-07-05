@@ -132,9 +132,19 @@ function highlightText(texto, inicio, fim) {
 
 // Função para compartilhar os dados de uma linha da tabela
 function shareData(index) {
-  const dataToShare = tableContent[index];
+  // Obtém os dados diretamente do fileData, usando o índice global
+  const dataToShare = fileData[index];
+  
+  // Formata os dados para compartilhar
+  const shareText = `
+    Documento: ${dataToShare.documento}
+    CNPJs: ${dataToShare.cnpj.map(cnpj => cnpj.valor).join(", ")}
+    Valores Monetários: ${dataToShare.valorMonetario.map(valor => valor.valor).join(", ")}
+    Empresas: ${dataToShare.empresas.map(empresa => empresa.valor).join(", ")}
+  `;
+  
   navigator.clipboard
-    .writeText(dataToShare)
+    .writeText(shareText)
     .then(() => {
       alert("Dados copiados para a área de transferência.");
     })
