@@ -1,0 +1,6 @@
+pymupdf==1.24.7
+Flask==3.0.3
+gliner==0.2.4
+spacy==3.7.5
+transformers==4.41.2
+Werkzeug==3.0.3

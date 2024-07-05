@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <img id="homeBtn" class="logo" src="{{url_for('static', filename='assets/logoGrantoSeguros.png')}}" alt="Logo" />
+      <menu class="menu">
+        <button id="uploadBtn" class="menu-btn" type="button">
+          Upload de arquivo
+        </button>
+        <button id="processedBtn" class="menu-btn" type="button">
+          Arquivos processados
+        </button>
+      </menu>
+    </header>
+    <main class="main">
+      <section id="home" class="section isVisible">
+        <p class="welcome">Bem-vindo ao Sistema de Upload de Arquivos</p>
+        <div class="homeBtnContainer">
+          <button id="uploadBtnHome" class="action-btn" type="button">
+            Upload de arquivo
+          </button>
+          <button id="processedBtnHome" class="action-btn" type="button">
+            Arquivos processados
+          </button>
+        </div>
+      </section>
+
+      <section id="upload" class="section">
+        <div class="main-container">
+          <h2>UPLOAD ARQUIVO</h2>
+          <form action="/upload" enctype="multipart/form-data" method="post">
+            <label for="pdfUpload" class="upload-label">Escolha um arquivo</label>
+            <input type="file" id="pdfUpload" name="pdfFile" accept="application/pdf" required style="display: none">
+            <div class="file-name" id="fileName"></div>
+            <button type="submit" id="submitButton" class="disabled-button" disabled>Enviar</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="processed" class="section">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Documento</th>
+                <th>CNPJ(s)</th>
+                <th>Valor(es) Monetário(s)</th>
+                <th>Empresa(s)</th>
+                <th>Mais informações</th>
+                <th>Compartilhar</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- Rows can be added here -->
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <button id="prevPage" class="pagination-btn">Anterior</button>
+          <span id="pageNumber" class="page-number">1</span>
+          <button id="nextPage" class="pagination-btn">Próximo</button>
+        </div>
+      </section>
+
+      <div id="fullscreen" class="fullscreen fadeIn">
+        <div class="overlay"></div>
+        <div class="modal">
+          <table>
+            <thead>
+              <tr>
+                <th>Contexto do(s) CNPJ(s)</th>
+                <th>Contexto do(s) Valor(es) Monetário(s)</th>
+                <th>Contexto da(s) Empresa(s)</th>
+              </tr>
+            </thead>
+            <tbody id="more-info-row">
+              <!-- As linhas de mais informações serão preenchidas dinamicamente pelo JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <script src="{{url_for('static', filename='main.js')}}"></script>
+</body>
+
+</html>

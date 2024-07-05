@@ -1,0 +1,323 @@
+:root {
+    --mainBg: #d9d9d9;
+    --mainBtn: #0ae8cd;
+    --mainBtnHover: #8ffff2;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--mainBg);
+    font-family: sans-serif;
+  }
+  
+  .wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+  }
+  
+  .header {
+    width: 100%;
+    height: 124px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 56px;
+    text-align: center;
+  
+    @media (max-width: 767px) {
+      justify-content: space-around;
+      padding: 0;
+      padding-top: 20px;
+    }
+  }
+  
+  .logo {
+    max-width: 211px;
+    cursor: pointer;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .menu-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: #d9d9d9;
+  }
+  
+  .menu-btn:hover {
+    background-color: #fff;
+  }
+  
+  .main {
+    width: 100%;
+    height: calc(100vh - 134px);
+    padding: 0 10px;
+  }
+  
+  .section {
+    width: 100%;
+    height: calc(100vh - 134px);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .welcome {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  #home {
+    text-align: center;
+  }
+  
+  .homeBtnContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 424px;
+    width: 100%;
+  }
+  
+  .main-container {
+    background-color: #fff;
+    max-width: 818px;
+    width: 100%;
+    border-radius: 4px;
+    padding: 46px;
+    text-align: center;
+  }
+  
+  .action-btn {
+    padding: 16px 18px;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: var(--mainBtn);
+    border: 1px solid var(--mainBtn);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .action-btn:hover, .upload-label:hover {
+    background-color: var(--mainBtnHover);
+  }
+  
+  .upload-label {
+    padding: 16px 18px;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: var(--mainBtn);
+    border: 1px solid var(--mainBtn);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+  }
+  
+  .file-name {
+    margin-bottom: 10px;
+    color: #888888;
+  }
+  
+  .disabled-button {
+    background-color: #c2c2c2;
+    cursor: not-allowed;
+    padding: 16px 18px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  /* Estilos para a tabela */
+  
+  .table-container {
+    overflow-x: auto; 
+    width: 100%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Estilos para cabeçalho e células */
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    background-color: #fff;
+    white-space: normal;
+    word-wrap: break-word; 
+    word-break: break-word; 
+  }
+  
+  th {
+    background-color: var(--mainBtn);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  
+  /* Estilos para o ícone de compartilhar */
+  .share-icon {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .more-info {
+    cursor: pointer;
+    color: blue;
+  }
+  
+  .more-info:hover {
+    text-decoration: underline;
+  }
+  
+  .fullscreen {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  
+  .modal {
+    background-color: #fff;
+    z-index: 11;
+    max-width: 80%; 
+    margin: auto; 
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+    border-radius: 8px; 
+    position: relative;
+    overflow-x: auto;
+  }
+  
+  /* Estilos para tornar a tabela mais responsiva */
+  @media only screen and (max-width: 768px) {
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    th,
+    td {
+      min-width: 120px; /* Largura mínima para as células */
+    }
+  }
+  
+  .highlight {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .isVisible {
+    display: flex;
+  }
+  
+  .fadeIn {
+    animation: fadeIn 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .modal {
+      max-width: 90%;
+      padding: 10px;
+    }
+    .modal th,
+    .modal td {
+      min-width: 120px; /* Define uma largura mínima para as células */
+    }
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .pagination-btn {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: var(--mainBtn);
+    color: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .pagination-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .page-number {
+    font-size: 16px;
+  }
+  
+  
+  .file-input-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .file-input-container input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  
+  .custom-file-label:hover {
+    background-color: #45a049;
+  }
