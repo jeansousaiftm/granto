@@ -10,7 +10,7 @@ Siga os passos abaixo para configurar e executar o projeto localmente.
 ### 1. Clonar o repositório
 ```
 git clone https://github.com/jeansousaiftm/granto.git
-cd nome-do-projeto
+cd granto
 ```
 
 ### 2. Instalar dependências
