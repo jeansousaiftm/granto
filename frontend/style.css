@@ -226,7 +226,13 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
     border-radius: 8px; 
     position: relative;
-    overflow-x: auto;
+    overflow: auto;
+  }
+  
+  .modal table {
+    max-height: 60vh;
+	overflow-y: auto;
+	display: block;
   }
   
   /* Estilos para tornar a tabela mais responsiva */
