@@ -198,12 +198,11 @@ function formatContextos(dados) {
 
 // Seleciona o elemento de tela cheia (modal) pelo seu ID
 const fullscreen = document.getElementById("fullscreen");
-
+const overlay = document.getElementById("overlay");
 // Adiciona um ouvinte de evento para fechar o modal quando ele é clicado
-fullscreen.addEventListener("click", () => {
+overlay.addEventListener("click", () => {
   fullscreen.classList.remove("isVisible");
 });
-
 // Função para abrir o modal, adicionando a classe 'isVisible'
 function openModal() {
   fullscreen.classList.add("isVisible");
